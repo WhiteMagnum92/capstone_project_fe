@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit {
 
   login(f:NgForm){
     this.as.login(f.value).subscribe((res)=>{
-      this.router.navigate(['home'])
+      console.log(res);
+      //this.router.navigate(['home'])
     })
   }
 
