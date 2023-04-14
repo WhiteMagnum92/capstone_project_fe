@@ -4,26 +4,27 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { BehaviorSubject, throwError } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Personaggio } from '../interfaces/personaggio';
+import { Personaggio } from '../../interfaces/personaggio';
 
 export interface SignupData {
   name: string;
+  username:string;
   email: string;
   password: string;
 }
 
 export interface AuthData {
-  email:string
-	id:number
-  username:string
-  accessToken:string
-  tokenType:string
+  email:string;
+	id:number;
+  username:string;
+  accessToken:string;
+  tokenType:string;
   personaggi:Personaggio[];
 
 }
 
 export interface LoginData {
-  email: string;
+  username: string;
   password: string;
 }
 
@@ -33,7 +34,7 @@ export interface LoginData {
 
 export class AuthService {
   jwtHelper = new JwtHelperService();
-  URL: string = 'http://localhost:8080';
+  URL: string = 'http://localhost:8080/api/auth';
   private authSubj = new BehaviorSubject<null | AuthData>(null);
   user$ = this.authSubj.asObservable();
   isLoggedIn$ = this.user$.pipe(map((user) => !!user));
@@ -119,7 +120,7 @@ export class AuthService {
         return throwError("L'utente non esiste");
         break;
       default:
-        alert('Errore nella chiamata');
+        //alert('Errore nella chiamata');
         return throwError('Errore nella chiamata');
         break;
     }

@@ -1,8 +1,10 @@
+<div>
 <form #f="ngForm" (ngSubmit)="register(f)">
   <input type="text" name="name" ngModel placeholder="name">
+  <input type="text" name="username" ngModel placeholder="username">
   <input type="text" name="email" ngModel placeholder="email">
   <input type="text" name="password" ngModel placeholder="password">
   <button type="submit">registrati</button>
 </form>
 <p class="fs-1">Oppure <a [routerLink]="['/login']">accedi</a></p>
-
+</div>
