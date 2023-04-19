@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CreaPersonaggioComponent } from './components/crea-personaggio/crea-personaggio.component';
 import { VisualizzaPersonaggiComponent } from './components/visualizza-personaggi/visualizza-personaggi.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LocationStrategy,HashLocationStrategy } from '@angular/common';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -18,6 +20,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     CreaPersonaggioComponent,
     VisualizzaPersonaggiComponent,
     DashboardComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     AuthModule,
     HttpClientModule
   ],
-  providers: [HttpClientModule],
-  bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

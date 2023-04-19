@@ -33,6 +33,8 @@ export interface LoginData {
 })
 
 export class AuthService {
+
+
   jwtHelper = new JwtHelperService();
   URL: string = 'http://localhost:8080/api/auth';
   private authSubj = new BehaviorSubject<null | AuthData>(null);
@@ -43,7 +45,6 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {
     this.restoreUser();
   }
-
 
   login(data: LoginData) {
 

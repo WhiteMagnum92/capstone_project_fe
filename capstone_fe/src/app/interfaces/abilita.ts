@@ -1,5 +1,9 @@
+import { Personaggio } from "./personaggio"
+
 export interface Abilita {
-  name:string
-  descrizione:string
+  id:number;
+  name:string;
+  descrizione:string;
+  personaggi:Personaggio[];
 
 }

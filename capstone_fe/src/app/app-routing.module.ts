@@ -6,10 +6,14 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { VisualizzaPersonaggiComponent } from './components/visualizza-personaggi/visualizza-personaggi.component';
 import { CreaPersonaggioComponent } from './components/crea-personaggio/crea-personaggio.component';
 import { AuthGuard } from './components/auth/auth.guard';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   {
-    path:'', component: SignupComponent,
+    path:'', component: HomeComponent,
+  },
+  {
+    path:'signup', component: SignupComponent,
   },
   {
     path:'login', component: LoginComponent,
@@ -18,7 +22,7 @@ const routes: Routes = [
     path:'dashboard/:id', component: DashboardComponent,
   },
   {
-      path:'crea-personaggio', component: CreaPersonaggioComponent,
+    path:'crea-personaggio', component: CreaPersonaggioComponent,
   },
   {
     path:'visualizza-personaggi', component: VisualizzaPersonaggiComponent,
